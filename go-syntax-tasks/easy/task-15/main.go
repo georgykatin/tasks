@@ -8,6 +8,10 @@ import "fmt"
 
 func main() {
 	x := 10
-	defer fmt.Println(x)
+	defer func() {
+		fmt.Println(x)
+	}()
 	x = 20
 }
+
+// Аргументы для функции вычисляются в момент вызова defer. Поэтому в консоль выводится 10.

@@ -20,3 +20,7 @@ func main() {
 
 	fmt.Println("counter:", counter)
 }
+
+// 1) Из-за race condition. counter не потокобезопасен
+// 2) WARNING: DATA RACE
+// 3) Либо использовать mutex, либо atomic. Для счетчика лучше использовать atomic.
